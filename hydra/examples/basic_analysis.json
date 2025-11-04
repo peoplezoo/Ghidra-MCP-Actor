@@ -1,0 +1,11 @@
+{
+  "binaryUrl": "https://example.com/sample.exe",
+  "binaryName": "sample.exe",
+  "generateReport": true,
+  "analysisOptions": {
+    "decompileAll": true,
+    "extractStrings": true,
+    "generateCallGraph": true,
+    "timeout": 600
+  }
+}

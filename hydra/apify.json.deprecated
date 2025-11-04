@@ -1,0 +1,11 @@
+{
+  "name": "ghidra-mcp-actor",
+  "version": "0.1.0",
+  "buildTag": "latest",
+  "env": {
+    "GHIDRA_HOME": "/opt/ghidra"
+  },
+  "readme": "Apify Actor that integrates Ghidra reverse engineering tool with Model Context Protocol (MCP) for AI-assisted malware analysis. Automatically decompiles binaries and exposes analysis tools for AI agents to inspect code structure, search for patterns, and generate reports.",
+  "categories": ["SECURITY"],
+  "description": "AI-assisted malware analysis using Ghidra and MCP integration"
+}

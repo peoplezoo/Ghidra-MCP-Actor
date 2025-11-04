@@ -1,0 +1,6 @@
+{
+  "binaryUrl": "https://example.com/sample.exe",
+  "binaryName": "sample.exe",
+  "generateReport": true,
+  "yaraRules": "rule SuspiciousRansomware {\n  meta:\n    description = \"Detects potential ransomware patterns\"\n    author = \"Security Analyst\"\n  strings:\n    $crypto1 = \"CryptEncrypt\" nocase\n    $crypto2 = \"CryptDecrypt\" nocase\n    $ransom = \"bitcoin\" nocase\n    $file_ext = \".encrypted\" nocase\n    $url = /https?:\\/\\/[a-zA-Z0-9\\-\\.]+\\.(onion|tk)/\n  condition:\n    (2 of ($crypto*)) and ($ransom or $file_ext or $url)\n}\n\nrule Keylogger {\n  meta:\n    description = \"Detects keylogger behavior\"\n  strings:\n    $key1 = \"GetAsyncKeyState\" nocase\n    $key2 = \"GetKeyState\" nocase\n    $hook = \"SetWindowsHookEx\" nocase\n  condition:\n    ($key1 or $key2) and $hook\n}"
+}

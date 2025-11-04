@@ -1,0 +1,10 @@
+{
+  "binaryUrl": "https://example.com/malware.exe",
+  "binaryName": "malware.exe",
+  "mcpMode": true,
+  "generateReport": false,
+  "analysisOptions": {
+    "decompileAll": true,
+    "timeout": 600
+  }
+}

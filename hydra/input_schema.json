@@ -1,0 +1,81 @@
+{
+  "title": "Ghidra MCP Actor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "binaryUrl": {
+      "title": "Binary URL",
+      "type": "string",
+      "description": "URL to download the binary file for analysis",
+      "editor": "textfield"
+    },
+    "binaryBase64": {
+      "title": "Binary (Base64 encoded)",
+      "type": "string",
+      "description": "Base64 encoded binary content (alternative to URL)",
+      "editor": "textarea"
+    },
+    "binaryName": {
+      "title": "Binary Filename",
+      "type": "string",
+      "description": "Name for the binary file (used for identification)",
+      "editor": "textfield",
+      "default": "sample.exe"
+    },
+    "yaraRules": {
+      "title": "YARA Rules",
+      "type": "string",
+      "description": "Custom YARA rules for malware detection (optional)",
+      "editor": "textarea"
+    },
+    "analysisOptions": {
+      "title": "Analysis Options",
+      "type": "object",
+      "description": "Options to control Ghidra analysis behavior",
+      "editor": "json",
+      "properties": {
+        "decompileAll": {
+          "type": "boolean",
+          "title": "Decompile All Functions",
+          "description": "Decompile all functions during initial analysis (slower but more complete)",
+          "default": true
+        },
+        "extractStrings": {
+          "type": "boolean",
+          "title": "Extract Strings",
+          "description": "Extract printable strings from binary",
+          "default": true
+        },
+        "generateCallGraph": {
+          "type": "boolean",
+          "title": "Generate Call Graph",
+          "description": "Generate function call graph visualization",
+          "default": true
+        },
+        "timeout": {
+          "type": "integer",
+          "title": "Analysis Timeout (seconds)",
+          "description": "Maximum time for Ghidra analysis",
+          "default": 600,
+          "minimum": 60,
+          "maximum": 3600
+        }
+      }
+    },
+    "mcpMode": {
+      "title": "MCP Server Mode",
+      "type": "boolean",
+      "description": "Run as MCP server in standby mode (for interactive AI analysis)",
+      "default": false,
+      "editor": "checkbox"
+    },
+    "generateReport": {
+      "title": "Generate Report",
+      "type": "boolean",
+      "description": "Generate HTML analysis report",
+      "default": true,
+      "editor": "checkbox"
+    }
+  },
+  "required": []
+}
